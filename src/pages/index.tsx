@@ -1,25 +1,17 @@
-import Header from "@/components/header/header";
-import { Button } from "@/components/ui/button";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Google_Sans } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const googleSans = Google_Sans({
+  variable: "--font-google-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
+export default function Home (){
   return (
     <div
-      className={`${geistSans.className} ${geistMono.className} 
+      className={`${googleSans.variable}
       flex min-h-screen justify-center p-8 pb-20 gap-16
-      sm:p-4  bg-zinc-50 font-sans dark:bg-black`}
+      sm:p-4  bg-zinc-50 dark:bg-black font-[family-name:var(--font-google-sans)]`}
     >
-      <Header />
     </div>
   );
 }

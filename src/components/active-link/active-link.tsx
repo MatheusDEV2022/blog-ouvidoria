@@ -6,11 +6,7 @@ type ActiveLinkProps = {
   children: React.ReactNode;
 } & LinkProps;
 
-export default function ActiveLink({
-  children,
-  href,
-  ...rest
-}: ActiveLinkProps) {
+export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
   const router = useRouter();
   const isCurrentPath =
     router.asPath === href ||
@@ -21,10 +17,10 @@ export default function ActiveLink({
       href={href}
       className={cn(
         "transition-colors hover:text-gray-100",
-        isCurrentPath ? "text-white" : "text-gray-300"
+        isCurrentPath ? "text-white" : "text-gray-300",
       )}
     >
-      Início
+      {children}
     </Link>
   );
-}
+};
